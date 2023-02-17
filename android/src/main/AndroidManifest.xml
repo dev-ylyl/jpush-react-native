@@ -79,6 +79,15 @@
         </receiver>
 
         <receiver android:name="cn.jpush.android.service.SchedulerReceiver" android:exported="false"/>
+        <service tools:node="remove"
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </service>
         <!-- since 4.6.0 Required SDK核心功能 -->
         <activity
             android:name="cn.android.service.JTransitActivity"
